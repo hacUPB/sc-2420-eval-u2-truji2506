@@ -17,7 +17,7 @@ Explicación Update()
 
 es el núcleo del Game Loop. Se ejecuta en cada frame del juego y es responsable de manejar la lógica dinámica, como detectar la entrada del usuario, actualizar las posiciones de los objetos, y gestionar las físicas. Es donde ocurre la mayor parte de la lógica de juego.
 
-´´´c
+```c
 void update() {
 
 	while (!SDL_TICKS_PASSED(SDL_GetTicks(), last_frame_time + FRAME_TARGET_TIME));
