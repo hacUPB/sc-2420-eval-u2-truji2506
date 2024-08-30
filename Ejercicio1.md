@@ -34,7 +34,7 @@ void update() {
 	ball.y += 50 * delta_time;
 }
 ```
-Explicación de Render()
+## Explicación de Render()
 
 Se encarga de dibujar los objetos del juego en la pantalla. Toma el estado actual del juego (que fue actualizado en Update()) y lo representa visualmente. Esta función es responsable de hacer que el juego sea visible para el jugador, renderizando gráficos, aplicando efectos visuales, y mostrando la interfaz de usuario.
 
@@ -50,7 +50,7 @@ void render() {
 	SDL_RenderPresent(renderer);
 }
 ```
-Explicación de printf()
+## Explicación de printf()
 
 se utiliza para imprimir texto formateado en la consola. En este caso lo que se imprime son los errores al momento de inicializar el juego como Error de creación, error de inicialización y error de creación cuando renderiza el juego.
 
