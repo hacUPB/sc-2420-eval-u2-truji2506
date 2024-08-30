@@ -1,10 +1,10 @@
 ## Observa el código fuente y localiza las funciones Setup(), Update(), y Render().
 
-Explicación Setup()
+## Explicación Setup()
 
 Se utiliza para inicializar el juego o la escena antes de que comience la ejecución principal. Es el lugar donde se configuran las variables globales, se cargan los recursos necesarios (como gráficos, sonidos, etc.), y se realizan las preparaciones que solo deben ejecutarse una vez, como la configuración de la posición inicial de los personajes o la creación de objetos.
 
-´´´c
+```c
 void setup() {
 	ball.x = 20;
 	ball.y = 20;
@@ -13,9 +13,9 @@ void setup() {
 }
 ```
 
-Explicación Update()
+## Explicación Update()
 
-es el núcleo del Game Loop. Se ejecuta en cada frame del juego y es responsable de manejar la lógica dinámica, como detectar la entrada del usuario, actualizar las posiciones de los objetos, y gestionar las físicas. Es donde ocurre la mayor parte de la lógica de juego.
+Es el núcleo del Game Loop. Se ejecuta en cada frame del juego y es responsable de manejar la lógica dinámica, como detectar la entrada del usuario, actualizar las posiciones de los objetos, y gestionar las físicas. Es donde ocurre la mayor parte de la lógica de juego.
 
 ```c
 void update() {
@@ -38,7 +38,7 @@ Explicación de Render()
 
 Se encarga de dibujar los objetos del juego en la pantalla. Toma el estado actual del juego (que fue actualizado en Update()) y lo representa visualmente. Esta función es responsable de hacer que el juego sea visible para el jugador, renderizando gráficos, aplicando efectos visuales, y mostrando la interfaz de usuario.
 
-´´´c
+```c
 void render() {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
@@ -49,8 +49,7 @@ void render() {
 	SDL_RenderFillRect(renderer, &ball_rect);
 	SDL_RenderPresent(renderer);
 }
-
-´´´
+```
 Explicación de printf()
 
 se utiliza para imprimir texto formateado en la consola. En este caso lo que se imprime son los errores al momento de inicializar el juego como Error de creación, error de inicialización y error de creación cuando renderiza el juego.
