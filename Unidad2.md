@@ -51,22 +51,19 @@ int main(int argc, char* argv[]){
     //pedir al usuario que ingrese dos numeros y calcule el menor de ellos
     //usar la funcion pow() para elevar ell primer número al segundo
     int numero_1, numero_2, potencia;
-
     printf("Ingrese un numero A: \n");
     scanf("%i", &numero_1);
-
     printf("Ingrese un numero B: \n");
     scanf("%i", &numero_2);
-
     printf("the min value is: %d\n",minimal(1,2));
     potencia = pow(numero_1,numero_2);
     printf("%i times %i = %i",numero_1,numero_2, potencia);
-    
     return 0;
 
 }
 ```
 ## Lenguaje assembler del codigo anterior
+
 ```
 	.file	"main.c"
 	.text
