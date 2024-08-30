@@ -40,7 +40,7 @@ float calcula_IMC(float peso,float estatura)
 ## Clase 2
 Iniciación SDL
 
-´´´
+´´´c
 #include "minimal.h"
 #include <stdio.h>
 #include <math.h>
@@ -64,7 +64,7 @@ int main(int argc, char* argv[]){
 ```
 ## Lenguaje assembler del codigo anterior
 
-```
+```c
 	.file	"main.c"
 	.text
 	.section	.rodata
