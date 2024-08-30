@@ -40,7 +40,7 @@ float calcula_IMC(float peso,float estatura)
 ## Clase 2
 Iniciación SDL
 
-´´´c
+```c
 #include "minimal.h"
 #include <stdio.h>
 #include <math.h>
@@ -59,7 +59,6 @@ int main(int argc, char* argv[]){
     potencia = pow(numero_1,numero_2);
     printf("%i times %i = %i",numero_1,numero_2, potencia);
     return 0;
-
 }
 ```
 ## Lenguaje assembler del codigo anterior
