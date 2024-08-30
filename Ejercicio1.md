@@ -17,8 +17,7 @@ Explicación Update()
 
 es el núcleo del Game Loop. Se ejecuta en cada frame del juego y es responsable de manejar la lógica dinámica, como detectar la entrada del usuario, actualizar las posiciones de los objetos, y gestionar las físicas. Es donde ocurre la mayor parte de la lógica de juego.
 
-Se utiliza para controlar 
-```c
+´´´c
 void update() {
 
 	while (!SDL_TICKS_PASSED(SDL_GetTicks(), last_frame_time + FRAME_TARGET_TIME));
@@ -43,15 +42,11 @@ Se encarga de dibujar los objetos del juego en la pantalla. Toma el estado actua
 void render() {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
-
 	// Aqui es donde podemos empezar a dibujar nuestros objetos de juego
 	// Dibujar rectangulo
 	SDL_Rect ball_rect = { (int)ball.x, (int)ball.y, (int)ball.width, (int)ball.height };
-
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
 	SDL_RenderFillRect(renderer, &ball_rect);
-
 	SDL_RenderPresent(renderer);
 }
 
@@ -66,7 +61,6 @@ int initialize_window(void){
 		fprintf(stderr, "Error Initializing SDL.\n");
 		return False;
 	}
-	
 	window = SDL_CreateWindow(NULL, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_BORDERLESS);
 	if (!window){
 		fprintf(stderr, "Error creating SDL Window.\n");
