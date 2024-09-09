@@ -90,6 +90,11 @@ void Render() {
     // Presentar lo renderizado en la pantalla
     SDL_RenderPresent(renderer);
 ```
+## DIFICULTADES
+
+Se me presenta una dificultad que al momento de realizar las condiciones de movimiento del jugador ya que traspasa los objetos que no lo deberia de hacer
+
+![image](https://github.com/user-attachments/assets/a46231ba-45cd-4029-a83b-3e9be7a20c29)
 
 
 
