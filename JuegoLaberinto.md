@@ -97,5 +97,10 @@ Se me presenta una dificultad que al momento de realizar las condiciones de movi
 ![image](https://github.com/user-attachments/assets/a46231ba-45cd-4029-a83b-3e9be7a20c29)
 
 
+Se realizaron algunas modificaciones al codigo con la ayuda del profesor para que reconozca las columnas 
+
+![image](https://github.com/user-attachments/assets/c117b1db-aa54-49af-af38-2b35b06100a1)
+
+
 
 
