@@ -1,6 +1,6 @@
 ## Inicio
 
-1.) Empezamos realizando las llamadas librerias definiendo las variables y las variables globales
+Empezamos realizando las llamadas librerias definiendo las variables y las variables globales.
 
 ´´´c
 #include <SDL.h>
