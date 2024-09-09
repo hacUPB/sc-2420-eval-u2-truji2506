@@ -1,6 +1,7 @@
 ## Inicio
 
 1.) Empezamos realizando las llamadas librerias definiendo las variables y las variables globales
+
 ´´´c
 #include <SDL.h>
 #include <stdio.h>
@@ -17,4 +18,4 @@ SDL_Window* window = NULL;
 SDL_Renderer* renderer = NULL;
 bool gameIsRunning = true;
 int lastUpdateTime = 0;
-```
+´´´
