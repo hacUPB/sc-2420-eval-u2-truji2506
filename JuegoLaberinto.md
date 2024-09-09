@@ -62,7 +62,7 @@ void Update() {
 ```
 
 
-En este paso realizamos la funcion de renderizar, ponemos el limpiador de pantalla y dibujar el laberinto con las especificaciones adecuadas
+En este paso realizamos la funcion de renderizar, ponemos el limpiador de pantalla y dibujar el laberinto con las especificaciones adecuadas, tambien en el redner ponemos que tamaño tiene el jugador y presentar lo renderizado en la pantalla 
 
 ```c
 // Función Render
@@ -81,6 +81,14 @@ void Render() {
             }
         }
     }
+
+    // Dibujar jugador (un cuadrado rojo)
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    SDL_Rect player = { playerX, playerY, LINE_SIZE, LINE_SIZE };
+    SDL_RenderFillRect(renderer, &player);
+
+    // Presentar lo renderizado en la pantalla
+    SDL_RenderPresent(renderer);
 ```
 
 
