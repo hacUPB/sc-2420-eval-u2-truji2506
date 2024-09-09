@@ -62,5 +62,27 @@ void Update() {
 ```
 
 
+En este paso realizamos la funcion de renderizar, ponemos el limpiador de pantalla y dibujar el laberinto con las especificaciones adecuadas
+
+```c
+// Función Render
+void Render() {
+    // Limpiar pantalla
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
+
+    // Dibujar laberinto
+    for (int row = 0; row < 12; row++) {
+        for (int col = 0; col < 16; col++) {
+            if (maze[row][col] == 1) {
+                SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+                SDL_Rect wall = { col * LINE_SIZE, row * LINE_SIZE, LINE_SIZE, LINE_SIZE };
+                SDL_RenderFillRect(renderer, &wall);
+            }
+        }
+    }
+```
+
+
 
 
