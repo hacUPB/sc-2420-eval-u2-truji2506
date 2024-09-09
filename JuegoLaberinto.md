@@ -43,3 +43,24 @@ int playerX = 1 * TILE_SIZE;
 int playerY = 1 * TILE_SIZE;
 int playerSpeed = 5;
 ```
+En este paso establecemos que hay adentro del Setup y del Update en el Setup inicializamos el juego y establecemos que tan rapido inicia el juego, en el Update realizamos un codigo para establecer la rapidez del juego a los FPS que necesitamos
+```c
+void Setup() {
+    SDL_Init(SDL_INIT_VIDEO);
+    window = SDL_CreateWindow("Juego de Laberinto", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+}
+
+// Función Update
+void Update() {
+    int time_to_wait = FRAME_TARGET_TIME - (SDL_GetTicks() - lastUpdateTime);
+    if (time_to_wait > 0 && time_to_wait <= FRAME_TARGET_TIME) {
+        SDL_Delay(time_to_wait);
+    }
+    lastUpdateTime = SDL_GetTicks();
+}
+```
+
+
+
+
