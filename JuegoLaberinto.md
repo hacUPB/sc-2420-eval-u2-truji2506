@@ -236,8 +236,11 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
 ```
-##    En la revision del profe, tuve algunos comentarios por parte de el ya que no me enfoque al responder varias preguntas,
+![image](https://github.com/user-attachments/assets/2d09f7ec-78fb-48d0-bc55-82db9a282a8a)
+
+##    En la revision del profe, tuve algunos comentarios por parte de el ya que no logre responder bien varias preguntas del codigo,
 
 ##    1. ¿Para que el player offset? 
 ```c
