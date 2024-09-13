@@ -237,6 +237,40 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 ```
+##    En la revision del profe, tuve algunos comentarios por parte de el ya que no me enfoque muy bien al responder varias preguntas,
 
+##    1. ¿Para que el player offset? 
+```c
+#define PLAYER_OFFSET (LINE_SIZE - PLAYER_SIZE) / 2
+```
+Esto tiene el proposito de centrar el jugador dentro de las celdas del laberinto es para calcular el tamaño de la celda de la pared y el tamaño del jugador esto nos daria 5 quien posiciona el jugador con 5 pixeles de margen por cada lado que en este caso serian los 4.
 
+##    2. ¿Para que usar el int player = 1 * Line_size + Player_offset?
+```c
+int playerX = 1 * LINE_SIZE + PLAYER_OFFSET;
+int playerY = 1 * LINE_SIZE + PLAYER_OFFSET;
+```
+Aca lo que hacemos es llamar la definición de Player offset quien es que maneja la posicion del jugador en las coordenadas (1,1) ya que al multiplicar por 1, el jugador tenga esta estas coordenadas fijas y asi hacemos que tenga un posicion mas adecuada por el tema del laberinto ya que en las coordenadas (0,0) estaria parte de la pared.
+
+##    3. ¿Para que sirve el CheckCollision en el codigo?
+
+```c
+bool CheckCollision(int newX, int newY) {
+    SDL_Rect playerRect = { newX, newY, PLAYER_SIZE, PLAYER_SIZE };
+
+    for (int row = 0; row < 12; row++) {
+        for (int col = 0; col < 16; col++) {
+            if (maze[row][col] == 1) {
+                SDL_Rect wallRect = { col * LINE_SIZE, row * LINE_SIZE, LINE_SIZE, LINE_SIZE };
+                if (SDL_HasIntersection(&playerRect, &wallRect)) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+```
+Este codigo lo que hace es llamar un bucle se genere 
 
