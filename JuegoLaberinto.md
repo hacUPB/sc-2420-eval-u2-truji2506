@@ -273,11 +273,13 @@ bool CheckCollision(int newX, int newY) {
 }
 ```
 ##    Siguiendo por partes para la explicación
+
 1.
 ```c
 SDL_Rect playerRect = { newX, newY, PLAYER_SIZE, PLAYER_SIZE };
 ```
 Aca creamos un rectangulo que se llama playerRect que seria la nueva posición del jugador, con las dimensiones del Player_Size los parametros newX y newY Son nuevos parametros calculado en la entrada del jugador.
+
 2.
 ```c
 for (int row = 0; row < 12; row++) {
@@ -287,8 +289,30 @@ for (int row = 0; row < 12; row++) {
 Este bucle recorre todas las celdas del laberinto. y el if indica que en cada celda hay una pared
 3.
 ```c
-    if (!CheckCollision(newPlayerX, newPlayerY)) {
-        playerX = newPlayerX;
-        playerY = newPlayerY;
-    }
+SDL_Rect wallRect = { col * LINE_SIZE, row * LINE_SIZE, LINE_SIZE, LINE_SIZE };
 ```
+Si una celda es una pared, se crea un rectángulo wallRect para representar esa pared en la pantalla. El tamaño de la pared es de LINE_SIZE x LINE_SIZE.
+Las coordenadas de la pared (col * LINE_SIZE, row * LINE_SIZE) indican su posición en la pantalla en función de la fila y columna del laberinto.
+4.
+```c
+if (SDL_HasIntersection(&playerRect, &wallRect)) {
+    return true;
+}
+```
+La función SDL_HasIntersection verifica si el rectángulo del jugador (playerRect) se cubre con el rectángulo de una pared wallRect.
+Si hay una intersección, significa que el jugador está colisionando con una pared, por lo que se devuelve true y aqui hace logico el bool
+5.
+```c
+return false;
+```
+Si no detecta ninguna colision puede moverse a la nueva posición sin chocar
+
+## ¿Para que el if(!CheckCollision(newPlayerX, newPlayerY))?
+```c
+if (!CheckCollision(newPlayerX, newPlayerY)) {
+    playerX = newPlayerX;
+    playerY = newPlayerY;
+}
+```
+Llama a la funcion CheckCollision, que verifica las coordenadas del jugador en X y en Y con una pared del laberinto, la funcion devuelve verdadero si hay colision y falso cuando no lo hay, ! esta condicion lo que hace es que solo se ejecuta cuando no hay condición en otras palabras asegura que el jugador solo se movera si la nueva posición no colisiona con una pared. playerX = newPlayerX lo que hace es actualizar a las nuevas coordenadas calculadas, permitiendo  que el jugador se mueva a la nueva posición.  
+
