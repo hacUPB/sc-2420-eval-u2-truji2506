@@ -237,7 +237,7 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 ```
-##    En la revision del profe, tuve algunos comentarios por parte de el ya que no me enfoque muy bien al responder varias preguntas,
+##    En la revision del profe, tuve algunos comentarios por parte de el ya que no me enfoque al responder varias preguntas,
 
 ##    1. ¿Para que el player offset? 
 ```c
@@ -272,5 +272,23 @@ bool CheckCollision(int newX, int newY) {
     return false;
 }
 ```
-Este codigo lo que hace es llamar un bucle se genere 
-
+##    Siguiendo por partes para la explicación
+1.
+```c
+SDL_Rect playerRect = { newX, newY, PLAYER_SIZE, PLAYER_SIZE };
+```
+Aca creamos un rectangulo que se llama playerRect que seria la nueva posición del jugador, con las dimensiones del Player_Size los parametros newX y newY Son nuevos parametros calculado en la entrada del jugador.
+2.
+```c
+for (int row = 0; row < 12; row++) {
+    for (int col = 0; col < 16; col++) {
+        if (maze[row][col] == 1) {
+```
+Este bucle recorre todas las celdas del laberinto. y el if indica que en cada celda hay una pared
+3.
+```c
+    if (!CheckCollision(newPlayerX, newPlayerY)) {
+        playerX = newPlayerX;
+        playerY = newPlayerY;
+    }
+```
